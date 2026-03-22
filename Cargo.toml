@@ -1,0 +1,23 @@
+[package]
+name = "miniquad-tests"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+miniquad = { git = "https://github.com/not-fl3/miniquad.git", branch = "master" }
+
+[[bin]]
+name = "window"
+path = "src/bin/window.rs"
+
+[[bin]]
+name = "input"
+path = "src/bin/input.rs"
+
+[[bin]]
+name = "graphics"
+path = "src/bin/graphics.rs"
+
+[lib]
+name = "miniquad_test_utils"
+path = "src/lib.rs"
