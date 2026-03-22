@@ -36,6 +36,14 @@ Tests basic graphics rendering. Draws simple shapes to verify that the rendering
 cargo run --bin graphics
 ```
 
+#### `mouse`
+Tests mouse input by drawing white pixels while the left mouse button is held down and moved across the window.
+
+**Run:**
+```bash
+cargo run --bin mouse
+```
+
 ## Building All Tests
 
 To build all test programs at once:
@@ -72,7 +80,8 @@ miniquad-tests/
 │   └── bin/
 │       ├── window.rs       # Window creation and lifecycle test
 │       ├── input.rs        # Input handling test
-│       └── graphics.rs     # Graphics rendering test
+│       ├── graphics.rs     # Graphics rendering test
+│       └── mouse.rs        # Mouse drawing test
 ```
 
 ## Adding New Tests

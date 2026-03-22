@@ -18,6 +18,10 @@ path = "src/bin/input.rs"
 name = "graphics"
 path = "src/bin/graphics.rs"
 
+[[bin]]
+name = "mouse"
+path = "src/bin/mouse.rs"
+
 [lib]
 name = "miniquad_test_utils"
 path = "src/lib.rs"
