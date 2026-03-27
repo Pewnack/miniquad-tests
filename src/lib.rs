@@ -6,16 +6,27 @@
 use miniquad::conf;
 
 /// Window configuration for test programs
-/// 
+///
 /// Provides sensible defaults for creating test windows:
 /// - 800x600 resolution
-/// - 60 FPS target
 /// - "Miniquad Test" window title
+///
+/// On macOS, pass `metal` as a command-line argument to use the Metal backend
+/// instead of the default OpenGL backend.
 pub fn create_test_window_conf() -> conf::Conf {
+    let use_metal = std::env::args().any(|a| a == "metal");
     conf::Conf {
         window_title: "Miniquad Test".to_string(),
         window_width: 800,
         window_height: 600,
+        platform: conf::Platform {
+            apple_gfx_api: if use_metal {
+                conf::AppleGfxApi::Metal
+            } else {
+                conf::AppleGfxApi::OpenGl
+            },
+            ..Default::default()
+        },
         ..Default::default()
     }
 }

@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 miniquad = { git = "https://github.com/not-fl3/miniquad.git", branch = "master" }
+glam = "0.29"
 
 [[bin]]
 name = "window"
@@ -21,6 +22,10 @@ path = "src/bin/graphics.rs"
 [[bin]]
 name = "mouse"
 path = "src/bin/mouse.rs"
+
+[[bin]]
+name = "wireframe"
+path = "src/bin/wireframe.rs"
 
 [lib]
 name = "miniquad_test_utils"

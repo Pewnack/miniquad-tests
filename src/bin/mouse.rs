@@ -1,4 +1,5 @@
 use miniquad::*;
+use miniquad_test_utils::create_test_window_conf;
 
 const WINDOW_WIDTH: i32 = 800;
 const WINDOW_HEIGHT: i32 = 600;
@@ -164,16 +165,12 @@ impl EventHandler for Stage {
 }
 
 fn main() {
-    miniquad::start(
-        conf::Conf {
-            window_title: String::from("Mouse Pixels"),
-            window_width: WINDOW_WIDTH,
-            window_height: WINDOW_HEIGHT,
-            high_dpi: false,
-            ..Default::default()
-        },
-        || Box::new(Stage::new()),
-    );
+    let mut conf = create_test_window_conf();
+    conf.window_title = String::from("Mouse Pixels");
+    conf.window_width = WINDOW_WIDTH;
+    conf.window_height = WINDOW_HEIGHT;
+    conf.high_dpi = false;
+    miniquad::start(conf, || Box::new(Stage::new()));
 }
 
 const VERTEX_SHADER: &str = r#"#version 100
