@@ -27,6 +27,10 @@ path = "src/bin/mouse.rs"
 name = "wireframe"
 path = "src/bin/wireframe.rs"
 
+[[bin]]
+name = "starfield"
+path = "src/bin/starfield.rs"
+
 [lib]
 name = "miniquad_test_utils"
 path = "src/lib.rs"
