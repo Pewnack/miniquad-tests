@@ -82,9 +82,17 @@ impl Stage {
             images: vec![],
         };
 
+        let backend = ctx.info().backend;
+
+        // On desktop OpenGL, gl_PointSize in the vertex shader is only respected
+        // when GL_PROGRAM_POINT_SIZE is enabled. Metal's [[point_size]] always works.
+        if backend == Backend::OpenGl {
+            unsafe { miniquad::gl::glEnable(miniquad::gl::GL_PROGRAM_POINT_SIZE) };
+        }
+
         let shader = ctx
             .new_shader(
-                match ctx.info().backend {
+                match backend {
                     Backend::OpenGl => ShaderSource::Glsl {
                         vertex: shader::VERTEX,
                         fragment: shader::FRAGMENT,
