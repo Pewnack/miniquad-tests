@@ -38,8 +38,8 @@ struct Stage {
 /// Pseudo-random spread using a simple LCG so we have no external RNG dependency.
 fn lcg(seed: u64) -> f32 {
     let x = seed.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
-    // Map to [-1, 1]
-    ((x >> 33) as f32 / (u32::MAX as f32)) * 2.0 - 1.0
+    // Map to [-1, 1]: take the upper 32 bits, cast to u32 (unsigned) before f32
+    ((x >> 32) as u32 as f32 / u32::MAX as f32) * 2.0 - 1.0
 }
 
 impl Stage {
