@@ -1,6 +1,6 @@
 # Miniquad Test Suite
 
-A collection of small test programs for the [miniquad](https://github.com/not-fl3/miniquad) graphics engine.
+A collection of small test programs for the [miniquad](https://github.com/not-fl3/miniquad) graphics engine. Note that these are mostly AI generated, so I can't take much credit for them.
 
 ## Running Tests
 
