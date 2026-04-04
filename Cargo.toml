@@ -35,6 +35,10 @@ path = "src/bin/starfield.rs"
 name = "viewport"
 path = "src/bin/viewport.rs"
 
+[[bin]]
+name = "scrolltext"
+path = "src/bin/scrolltext.rs"
+
 [lib]
 name = "miniquad_test_utils"
 path = "src/lib.rs"
