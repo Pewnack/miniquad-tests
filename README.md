@@ -16,6 +16,7 @@ Each test is a standalone binary executable.
 | `mouse` | Tests mouse input by drawing white pixels while the left mouse button is held down and moved across the window. |
 | `wireframe` | Renders a rotating 3D wireframe cube using `PrimitiveType::Lines`. You should see a green wireframe cube rotating on a black background. |
 | `starfield` | Renders an animated starfield using `PrimitiveType::Points` with dynamic vertex buffer updates (`BufferUsage::Stream`). You should see white stars streaming toward you on a dark background. |
+| `viewport` | Renders a colour-shaded triangle inside a restricted viewport centred in the window using `apply_viewport`. A light grey rectangle is drawn around the viewport border so its bounds are clearly visible. |
 
 Run any test with:
 
@@ -62,7 +63,8 @@ miniquad-tests/
 │       ├── graphics.rs     # Graphics rendering test
 │       ├── mouse.rs        # Mouse drawing test
 │       ├── wireframe.rs    # Rotating 3D wireframe cube test
-│       └── starfield.rs    # Animated starfield test
+│       ├── starfield.rs    # Animated starfield test
+│       └── viewport.rs     # Shaded triangle in a centred sub-viewport test
 ```
 
 ## Adding New Tests
