@@ -17,7 +17,7 @@ Each test is a standalone binary executable.
 | `wireframe` | Renders a rotating 3D wireframe cube using `PrimitiveType::Lines`. You should see a green wireframe cube rotating on a black background. |
 | `starfield` | Renders an animated starfield using `PrimitiveType::Points` with dynamic vertex buffer updates (`BufferUsage::Stream`). You should see white stars streaming toward you on a dark background. |
 | `viewport` | Renders a colour-shaded triangle inside a restricted viewport centred in the window using `apply_viewport`. A light grey rectangle is drawn around the viewport border so its bounds are clearly visible. |
-| `scrolltext` | Renders white text scrolling smoothly from left to right on a black background. Demonstrates texture creation from raw pixel data, a bitmap font, and delta-time animation. |
+| `scrolltext` | Renders white text scrolling smoothly from right to left on a black background. Demonstrates texture creation from raw pixel data, a bitmap font, and delta-time animation. |
 
 Run any test with:
 

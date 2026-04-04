@@ -13,7 +13,7 @@
 //!
 //! **How to use:**
 //! Run with: `cargo run --bin scrolltext`
-//! You should see white text scrolling left to right on a black background.
+//! You should see white text scrolling right to left on a black background.
 
 use miniquad::*;
 use miniquad_test_utils::create_test_window_conf;
@@ -315,8 +315,8 @@ impl Stage {
 
         // ── Geometry ─────────────────────────────────────────────────────────
         let text_px_w = TEXT.len() as f32 * 8.0 * SCALE;
-        // Start with text fully off the left edge.
-        let initial_x = -text_px_w;
+        // Start with text fully off the right edge.
+        let initial_x = WIN_W;
         let vertices = make_vertices(initial_x, text_px_w);
 
         let vertex_buffer = ctx.new_buffer(
@@ -377,10 +377,10 @@ impl EventHandler for Stage {
         let dt = (now - self.last_time) as f32;
         self.last_time = now;
 
-        self.scroll_x += SCROLL_SPEED * dt;
-        // When the text has fully scrolled past the right edge, loop back.
-        if self.scroll_x > WIN_W {
-            self.scroll_x = -self.text_px_w;
+        self.scroll_x -= SCROLL_SPEED * dt;
+        // When the text has fully scrolled past the left edge, loop back.
+        if self.scroll_x + self.text_px_w < 0.0 {
+            self.scroll_x = WIN_W;
         }
     }
 
