@@ -39,6 +39,10 @@ path = "src/bin/viewport.rs"
 name = "scrolltext"
 path = "src/bin/scrolltext.rs"
 
+[[bin]]
+name = "files_dropped"
+path = "src/bin/files_dropped.rs"
+
 [lib]
 name = "miniquad_test_utils"
 path = "src/lib.rs"
