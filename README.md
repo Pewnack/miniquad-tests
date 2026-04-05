@@ -18,6 +18,7 @@ Each test is a standalone binary executable.
 | `starfield` | Renders an animated starfield using `PrimitiveType::Points` with dynamic vertex buffer updates (`BufferUsage::Stream`). You should see white stars streaming toward you on a dark background. |
 | `viewport` | Renders a colour-shaded triangle inside a restricted viewport centred in the window using `apply_viewport`. A light grey rectangle is drawn around the viewport border so its bounds are clearly visible. |
 | `scrolltext` | Renders white text scrolling smoothly from right to left on a black background. Demonstrates texture creation from raw pixel data, a bitmap font, and delta-time animation. |
+| `files_dropped` | Demonstrates the `files_dropped_event` callback. Drag one or more files onto the window to see their paths displayed in white on a black background using a scaled bitmap font. |
 
 Run any test with:
 
@@ -66,7 +67,8 @@ miniquad-tests/
 │       ├── wireframe.rs    # Rotating 3D wireframe cube test
 │       ├── starfield.rs    # Animated starfield test
 │       ├── viewport.rs     # Shaded triangle in a centred sub-viewport test
-│       └── scrolltext.rs   # Scrolling white text on black background test
+│       ├── scrolltext.rs   # Scrolling white text on black background test
+│       └── files_dropped.rs # Files-dropped event and bitmap-font display test
 ```
 
 ## Adding New Tests
