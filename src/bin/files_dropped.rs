@@ -22,7 +22,7 @@ const WIN_W: f32 = 800.0;
 const WIN_H: f32 = 600.0;
 
 /// Scale factor applied to each 8×8 font glyph (screen pixels per font pixel).
-const SCALE: f32 = 3.0;
+const SCALE: f32 = 2.0;
 
 /// Vertical gap between lines in screen pixels.
 const LINE_GAP: f32 = 4.0;
