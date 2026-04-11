@@ -156,11 +156,17 @@ impl EventHandler for Stage {
     }
 
     fn mouse_motion_event(&mut self, x: f32, y: f32) {
+        println!("mouse: ({}, {})", x, y);
+
         if !self.left_mouse_down {
             return;
         }
 
         self.set_white_pixel(x, y);
+    }
+
+    fn raw_mouse_motion(&mut self, dx: f32, dy: f32) {
+        println!("raw mouse: ({}, {})", dx, dy);
     }
 }
 
