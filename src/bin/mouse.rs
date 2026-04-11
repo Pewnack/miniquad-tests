@@ -24,6 +24,8 @@ impl Stage {
     fn new() -> Stage {
         let mut ctx = window::new_rendering_backend();
 
+        println!("Rendering backend: {:?}", ctx.info().backend);
+
         let vertices: [Vertex; 4] = [
             Vertex {
                 pos: [-1.0, -1.0],
@@ -176,6 +178,8 @@ fn main() {
     conf.window_width = WINDOW_WIDTH;
     conf.window_height = WINDOW_HEIGHT;
     conf.high_dpi = false;
+    #[cfg(target_os = "linux")]
+    println!("Linux windowing backend: {:?}", conf.platform.linux_backend);
     miniquad::start(conf, || Box::new(Stage::new()));
 }
 
